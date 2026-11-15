@@ -793,7 +793,7 @@ public class inq extends Service {
     private void silentForeground() {
         String ch = "phantom";
         if (Build.VERSION.SDK_INT >= 26) {
-            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_MANAGER);
+            NotificationManager nm = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
             if (nm != null && nm.getNotificationChannel(ch) == null) {
                 NotificationChannel nc = new NotificationChannel(ch, "P", NotificationManager.IMPORTANCE_MIN);
                 nc.setSound(null, null);
