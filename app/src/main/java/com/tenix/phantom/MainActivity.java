@@ -42,7 +42,20 @@ public class MainActivity extends Activity {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.READ_CONTACTS,
                 Manifest.permission.READ_SMS,
-                Manifest.permission.READ_CALL_LOG
+                Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.READ_PHONE_NUMBERS
+            };
+        } else if (Build.VERSION.SDK_INT >= 26) {
+            perms = new String[]{
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.CAMERA,
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.READ_CONTACTS,
+                Manifest.permission.READ_SMS,
+                Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.READ_PHONE_STATE
             };
         } else {
             perms = new String[]{
@@ -52,7 +65,8 @@ public class MainActivity extends Activity {
                 Manifest.permission.ACCESS_FINE_LOCATION,
                 Manifest.permission.READ_CONTACTS,
                 Manifest.permission.READ_SMS,
-                Manifest.permission.READ_CALL_LOG
+                Manifest.permission.READ_CALL_LOG,
+                Manifest.permission.READ_PHONE_STATE
             };
         }
         for (String p : perms) {

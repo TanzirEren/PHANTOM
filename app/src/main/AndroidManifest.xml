@@ -36,8 +36,9 @@
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
 
-    <!-- Phone number -->
+    <!-- Phone number + SIM info -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
 
     <!-- Brightness / System settings -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
