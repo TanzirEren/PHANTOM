@@ -1,0 +1,41 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.tenix.phantom'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.tenix.phantom"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled false
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    packaging {
+        resources {
+            excludes += ['META-INF/**', '**.properties']
+        }
+    }
+}
+
+dependencies {
+    // Zero external dependencies — pure Android SDK only
+}

